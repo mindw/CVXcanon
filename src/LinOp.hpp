@@ -46,10 +46,12 @@ class LinOp{
 			type == DENSE_CONST || type == SPARSE_CONST;
 		}
 		std::vector< std::vector< double > > data;
+		virtual void addData(){
+			return;
+		}
 };
 
 class DenseLinOp : public LinOp{
-	std::vector< std::vector< double > > data;
 	void addData(){
 		// TODO: John
 		return;
@@ -77,6 +79,14 @@ class VariableLinOp : public LinOp{
 
 class ScalarLinOp : public LinOp{
 	double data;
+	void addData(){
+		// TODO: John
+		return;
+	}
+};
+
+class SliceLinOp : public LinOp{
+	double slices[2][3];
 	void addData(){
 		// TODO: John
 		return;
