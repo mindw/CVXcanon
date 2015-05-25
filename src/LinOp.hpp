@@ -38,7 +38,6 @@ typedef operatortype OperatorType;
 class LinOp{	
 	public:
 		OperatorType type;
-		std::vector< std::vector<double> > data;
 		std::vector< int > size;
 		std::vector< LinOp* > args;
 		
@@ -46,5 +45,43 @@ class LinOp{
 			return  type == SCALAR_CONST || 
 			type == DENSE_CONST || type == SPARSE_CONST;
 		}
+		std::vector< std::vector< double > > data;
 };
+
+class DenseLinOp : public LinOp{
+	std::vector< std::vector< double > > data;
+	void addData(){
+		// TODO: John
+		return;
+	}
+};
+
+class SparseLinOp : public LinOp{
+	std::vector< double > V;
+	std::vector< double > I;
+	std::vector< double > J;
+	void addData(){
+		// TODO: John
+		return;
+	}
+};
+
+class VariableLinOp : public LinOp{
+	int variableId;
+	void addData(){
+		// TODO: John
+		return;
+	}
+};
+
+
+class ScalarLinOp : public LinOp{
+	double data;
+	void addData(){
+		// TODO: John
+		return;
+	}
+};
+
+
 #endif
